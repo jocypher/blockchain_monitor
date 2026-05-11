@@ -12,7 +12,7 @@ const ERC20_ABI = [
 const provider = new ethers.JsonRpcProvider(envConstants.TENDERLY_URL);
 
 const contract = new ethers.Contract(
-  appConstants.BNB_ADDRESS,
+  appConstants.BNB_ON_ETH_ADDRESS,
   ERC20_ABI,
   provider,
 ) as any;

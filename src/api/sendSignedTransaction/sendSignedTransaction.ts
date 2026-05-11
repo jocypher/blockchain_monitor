@@ -20,7 +20,7 @@ async function sendSignedTransaction() {
   // Get Balance
   console.log(wallet.address);
   const senderBalanceBefore = await provider.getBalance(wallet.address);
-  const receiverBalanceBefore = await provider.getBalance(appConstants.RECEIVER)
+  const receiverBalanceBefore = await provider.getBalance(envConstants.RECEIVER_ADDRESS)
 
 
 
@@ -32,7 +32,7 @@ async function sendSignedTransaction() {
   
   // Create Transaction
   const transaction = await wallet.sendTransaction({
-    to: appConstants.RECEIVER,
+    to: envConstants.RECEIVER_ADDRESS,
     value: ethers.parseUnits("2", 18),
   });
 
@@ -44,7 +44,7 @@ async function sendSignedTransaction() {
 
   //Get balances After
   const senderBalanceAfter = await provider.getBalance(wallet.address);
-  const receiverBalanceAfter = await provider.getBalance(appConstants.RECEIVER);
+  const receiverBalanceAfter = await provider.getBalance(envConstants.RECEIVER_ADDRESS!);
 
   // Log Balances
   console.log(

@@ -9,9 +9,9 @@ const provider = new ethers.JsonRpcProvider(
   envConstants.ALCHEMY_URL
 );
 
-    const balance = await provider.getBalance(appConstants.ADDRESS)
+    const balance = await provider.getBalance(envConstants.RECEIVER_ADDRESS!)
     
-    console.log(`\n ETH Balance of ${appConstants.ADDRESS} --> ${ethers.formatEther(balance)}`)
+    console.log(`\n ETH Balance of ${envConstants.RECEIVER_ADDRESS} --> ${ethers.formatEther(balance)}`)
 }
 
 export default main 

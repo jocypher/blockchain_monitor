@@ -15,7 +15,7 @@ const ERC20_ABI = [
 ] as const;
 
 const contract = new ethers.Contract(
-  appConstants.BNB_ADDRESS,
+  appConstants.BNB_ON_ETH_ADDRESS,
   ERC20_ABI,
   provider,
 ) as any;
@@ -30,9 +30,9 @@ async function writeSmartContract() {
 
   console.log(wallet.address);
   const senderBalanceBefore = await contract.balanceOf(wallet.address);
-  const receiverBalanceBefore = await contract.balanceOf(appConstants.RECEIVER);
+  const receiverBalanceBefore = await contract.balanceOf(envConstants.RECEIVER_ADDRESS);
 
-  console.log(`\nReading from ${appConstants.RECEIVER}\n`);
+  console.log(`\nReading from ${envConstants.RECEIVER_ADDRESS}\n`);
   console.log(
     `Sender Balance Before: ${ethers.formatUnits(
       senderBalanceBefore,
@@ -51,14 +51,14 @@ async function writeSmartContract() {
 
   const transaction = await contract
     .connect(wallet)
-    .transfer(appConstants.RECEIVER, AMOUNT);
+    .transfer(envConstants.RECEIVER_ADDRESS, AMOUNT);
 
   await transaction.wait();
 
   console.log("\n RECEIPT AFTER TRANSACTION:\n",transaction);
 
   const senderBalanceAfter = await contract.balanceOf(wallet.address);
-  const receiverBalanceAfter = await contract.balanceOf(appConstants.RECEIVER);
+  const receiverBalanceAfter = await contract.balanceOf(envConstants.RECEIVER_ADDRESS);
 
   console.log(
     `Sender Balance After: ${ethers.formatEther(senderBalanceAfter)}`,
