@@ -1,9 +1,7 @@
 import dotenv from "dotenv";
 import { ethers } from "ethers";
-
-import promptForKey from "../../core/helpers/prompt";
 import envConstants from "../../core/constants/envConstants";
-import { appConstants } from "../../core/constants/appConstants";
+
 
 //setup connection
 const provider = new ethers.JsonRpcProvider(envConstants.TENDERLY_URL);
