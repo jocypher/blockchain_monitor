@@ -39,8 +39,11 @@ async function getAllTokenBalance() {
     const ethFormatted = ethers.formatUnits(usdcEthBalance, usdcEthDec);
     const polFormatted = ethers.formatUnits(usdcPolBalance, usdcPolDec);
 
-    console.log(`USDC ON ETH: ${ethFormatted}`);
-    console.log(`USDC ON POL: ${polFormatted}`);
+    const result = {
+      USDC_ETH: ethFormatted,
+      USDC_POL: polFormatted,
+    };
+    console.log(result);
   } catch (error) {
     console.error("Failed to get token balances:", error);
     throw error;
