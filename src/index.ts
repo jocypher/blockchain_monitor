@@ -12,6 +12,8 @@ import getAllTokenBalance from "./api/wallets/balances/getTokenBalance";
 import getAllTokenSupply from "./api/wallets/balances/getTokenSupply";
 import getFullWalletReport from "./api/wallets/reports/getWalletFullReports";
 import compareTokenBalances from "./api/wallets/reports/compareTokenBalance";
+import multiChainBalanceReport from "./api/wallets/reports/multichainBalanceReport";
+import isAddressValid from "./api/wallets/validation/isAddressValid";
 
 const app = express();
 const PORT = envConstants.PORT;
@@ -31,7 +33,8 @@ getAllTokenBalance();
 getAllTokenSupply();
 getFullWalletReport()
 compareTokenBalances()
-
+multiChainBalanceReport();
+isAddressValid()
 
 // app.listen(PORT, ()=>{
 //     console.log(`Server running on PORT ${PORT}`)
