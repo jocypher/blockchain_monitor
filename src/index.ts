@@ -15,6 +15,7 @@ import compareTokenBalances from "./api/wallets/reports/compareTokenBalance";
 import multiChainBalanceReport from "./api/wallets/reports/multichainBalanceReport";
 import isAddressValid from "./api/wallets/validation/isAddressValid";
 import getTokenDecimals from "./api/token/info/getTokenDecimals";
+import getTokenSymbols from "./api/token/info/getTokenSymbol";
 
 const app = express();
 const PORT = envConstants.PORT;
@@ -37,6 +38,7 @@ compareTokenBalances();
 multiChainBalanceReport();
 isAddressValid();
 getTokenDecimals();
+getTokenSymbols()
 
 // app.listen(PORT, ()=>{
 //     console.log(`Server running on PORT ${PORT}`)
