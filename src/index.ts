@@ -20,6 +20,7 @@ import getBlockInfo from "./api/v1/blocks/reader/getBlockInfo";
 import getCurrentBlockNumber from "./api/v1/blocks/reader/getCurrentBlockNumber";
 import getTransactionDetails from "./api/v1/blocks/transactions/getTransactionDetails";
 import getTransactionStatus from "./api/v1/blocks/transactions/getTransactionStatus";
+import getTransactionConfirmations from "./api/v1/blocks/transactions/getTransactionConfirmations";
 
 const app = express();
 const PORT = envConstants.PORT;
@@ -47,6 +48,7 @@ getBlockInfo();
 getCurrentBlockNumber();
 getTransactionDetails();
 getTransactionStatus();
+getTransactionConfirmations()
 
 // app.listen(PORT, ()=>{
 //     console.log(`Server running on PORT ${PORT}`)
