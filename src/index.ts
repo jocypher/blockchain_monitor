@@ -1,21 +1,25 @@
 import express from "express";
 import envConstants from "./core/constants/envConstants";
-import main from "./api/sendAccount/sendAccount";
-import sendSignedTransaction from "./api/sendSignedTransaction/sendSignedTransaction";
-import readSmartContract from "./api/readSmartContract/readSmartContract";
-import writeSmartContract from "./api/writeSmartContract/writeSmartContract";
-import contractEvents from "./api/contractEvent/contract_event";
-import getEthBalance from "./api/wallets/balances/getEthBalance";
-import getPolBalance from "./api/wallets/balances/getPolBalance";
-import getTokenBalance from "./api/wallets/balances/getTokenBalance";
-import getAllTokenBalance from "./api/wallets/balances/getTokenBalance";
-import getAllTokenSupply from "./api/wallets/balances/getTokenSupply";
-import getFullWalletReport from "./api/wallets/reports/getWalletFullReports";
-import compareTokenBalances from "./api/wallets/reports/compareTokenBalance";
-import multiChainBalanceReport from "./api/wallets/reports/multichainBalanceReport";
-import isAddressValid from "./api/wallets/validation/isAddressValid";
-import getTokenDecimals from "./api/token/info/getTokenDecimals";
-import getTokenSymbols from "./api/token/info/getTokenSymbol";
+import main from "./api/v0/sendAccount/sendAccount";
+import sendSignedTransaction from "./api/v0/sendSignedTransaction/sendSignedTransaction";
+import readSmartContract from "./api/v0/readSmartContract/readSmartContract";
+import writeSmartContract from "./api/v0/writeSmartContract/writeSmartContract";
+import contractEvents from "./api/v0/contractEvent/contract_event";
+import getEthBalance from "./api/v1/wallets/balances/getEthBalance";
+import getPolBalance from "./api/v1/wallets/balances/getPolBalance";
+import getTokenBalance from "./api/v1/wallets/balances/getTokenBalance";
+import getAllTokenBalance from "./api/v1/wallets/balances/getTokenBalance";
+import getAllTokenSupply from "./api/v1/wallets/balances/getTokenSupply";
+import getFullWalletReport from "./api/v1/wallets/reports/getWalletFullReports";
+import compareTokenBalances from "./api/v1/wallets/reports/compareTokenBalance";
+import multiChainBalanceReport from "./api/v1/wallets/reports/multichainBalanceReport";
+import isAddressValid from "./core/validation/isAddressValid";
+import getTokenDecimals from "./api/v1/token/info/getTokenDecimals";
+import getTokenSymbols from "./api/v1/token/info/getTokenSymbol";
+import getBlockInfo from "./api/v1/blocks/reader/getBlockInfo";
+import getCurrentBlockNumber from "./api/v1/blocks/reader/getCurrentBlockNumber";
+import getTransactionDetails from "./api/v1/blocks/transactions/getTransactionDetails";
+import getTransactionStatus from "./api/v1/blocks/transactions/getTransactionStatus";
 
 const app = express();
 const PORT = envConstants.PORT;
@@ -38,7 +42,11 @@ compareTokenBalances();
 multiChainBalanceReport();
 isAddressValid();
 getTokenDecimals();
-getTokenSymbols()
+getTokenSymbols();
+getBlockInfo();
+getCurrentBlockNumber();
+getTransactionDetails();
+getTransactionStatus();
 
 // app.listen(PORT, ()=>{
 //     console.log(`Server running on PORT ${PORT}`)
