@@ -21,6 +21,14 @@ import getCurrentBlockNumber from "./api/v1/blocks/reader/getCurrentBlockNumber"
 import getTransactionDetails from "./api/v1/blocks/transactions/getTransactionDetails";
 import getTransactionStatus from "./api/v1/blocks/transactions/getTransactionStatus";
 import getTransactionConfirmations from "./api/v1/blocks/transactions/getTransactionConfirmations";
+import sendEth from "./api/v1/transfers/send/sendEth";
+import sendPolWithMemo from "./api/v1/transfers/send/sendEthWithMemo";
+import sendToken from "./api/v1/transfers/send/sendToken";
+import checkAndSendToken from "./api/v1/transfers/send/checkAndSendToken";
+import estimateEthTransferGasFees from "./api/v1/transfers/gas/estimateETHTransferGas";
+import estimatePolTransferGas from "./api/v1/transfers/gas/estimatePolTransferGas";
+import estimateTokenTransferGas from "./api/v1/transfers/gas/estimateTokenTransferGas";
+import getCurrentGasPrice from "./api/v1/transfers/gas/getCurrentGasPrice";
 
 const app = express();
 const PORT = envConstants.PORT;
@@ -34,21 +42,30 @@ const PORT = envConstants.PORT;
 //writeSmartContract()
 
 //contractEvents()
-getEthBalance();
-getPolBalance();
-getAllTokenBalance();
-getAllTokenSupply();
-getFullWalletReport();
-compareTokenBalances();
-multiChainBalanceReport();
-isAddressValid();
-getTokenDecimals();
-getTokenSymbols();
-getBlockInfo();
-getCurrentBlockNumber();
-getTransactionDetails();
-getTransactionStatus();
-getTransactionConfirmations()
+// getEthBalance();
+// getPolBalance();
+// getAllTokenBalance();
+// getAllTokenSupply();
+// getFullWalletReport();
+// compareTokenBalances();
+// multiChainBalanceReport();
+// isAddressValid();
+// getTokenDecimals();
+// getTokenSymbols();
+// getBlockInfo();
+// getCurrentBlockNumber();
+// getTransactionDetails();
+// getTransactionStatus();
+// getTransactionConfirmations()
+
+//sendEth()
+
+//sendPolWithMemo()
+//checkAndSendToken()
+// estimateEthTransferGasFees()
+// estimatePolTransferGas()
+//estimateTokenTransferGas()
+getCurrentGasPrice()
 
 // app.listen(PORT, ()=>{
 //     console.log(`Server running on PORT ${PORT}`)
