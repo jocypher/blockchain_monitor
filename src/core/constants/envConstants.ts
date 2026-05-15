@@ -11,6 +11,10 @@ const envConstants = {
   },
 
   TENDERLY_URL: `${process.env.TENDERLY_BASE_URL}/${process.env.TENDERLY_API_KEY}`,
+  WS_ALCHEMY_URL:{
+    ETH: `${process.env.WS_ALCHEMY_ETH_URL}/${process.env.ALCHEMY_API_KEY}`,
+    POL: `${process.env.WS_ALCHEMY_POL_URL}/${process.env.ALCHEMY_API_KEY}`,
+  },
   PRIVATE_KEY: process.env.PRIVATE_KEY ?? "",
   RECEIVER_ADDRESS: process.env.RECEIVER_ADDRESS ?? ""
 };
