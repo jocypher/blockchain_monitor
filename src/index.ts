@@ -31,6 +31,7 @@ import estimateTokenTransferGas from "./api/v1/transfers/gas/estimateTokenTransf
 import getCurrentGasPrice from "./api/v1/transfers/gas/getCurrentGasPrice";
 import getTokenTransferHistory from "./api/v1/monitors/history/getTokenTransferHistory";
 import watchIncomingEth from "./api/v1/monitors/watchChain/watchIncomingEth";
+import watchIncomingPol from "./api/v1/monitors/watchChain/watchIncomingPol";
 
 const app = express();
 const PORT = envConstants.PORT;
@@ -69,7 +70,8 @@ const PORT = envConstants.PORT;
 //estimateTokenTransferGas()
 //getCurrentGasPrice()
 //getTokenTransferHistory()
-watchIncomingEth()
+// watchIncomingEth()
+watchIncomingPol()
 
 // app.listen(PORT, ()=>{
 //     console.log(`Server running on PORT ${PORT}`)
